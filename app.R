@@ -269,15 +269,15 @@ server <- function(input, output, session) {
   # Payment chart
   output$payment_chart <- renderPlot({
     data <- konsumen_data()
-    if (!"Error" %in% names(data) && "kategori_bb" %in% names(data)) {
+    if (!"Error" %in% names(data) && "kategori_pembayaran" %in% names(data)) {
       payment_count <- data %>% 
-        count(kategori_bb) %>%
+        count(kategori_pembayaran) %>%
         arrange(desc(n))
       
-      ggplot(payment_count, aes(x = reorder(kategori_bb, n), y = n)) +
+      ggplot(payment_count, aes(x = reorder(kategori_pembayaran, n), y = n)) +
         geom_col(fill = "purple", alpha = 0.8) +
         coord_flip() +
-        labs(x = "Kategori BB", y = "Count") +
+        labs(x = "Kategori pembayaran", y = "Count") +
         theme_minimal() +
         theme(axis.text = element_text(size = 10))
     }
