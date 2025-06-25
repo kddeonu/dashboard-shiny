@@ -12,11 +12,11 @@ get_data <- function() {
     # Connect to database
     conn <- dbConnect(
       PostgreSQL(),
-      host = "yamanote.proxy.rlwy.net",
-      port = 58101,
+      host = "mainline.proxy.rlwy.net",
+      port = 13813,
       dbname = "railway",
       user = "postgres",
-      password = "qbOqtrqNgcbMMhDmvHJbXdfKRfgZDxdk"
+      password = "dfdvDBaFmIzwbEHgXhGWDlnRjbNRWtwp"
     )
     
     # Get data
