@@ -15,7 +15,6 @@ RUN R -e "install.packages(c('shiny', 'DBI', 'RPostgreSQL', 'DT', 'ggplot2', 'dp
 
 # Copy application files
 COPY app.R /srv/shiny-server/
-COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 
 # Make sure the directory is owned by shiny user
 RUN chown -R shiny:shiny /srv/shiny-server
